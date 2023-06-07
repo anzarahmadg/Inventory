@@ -1,0 +1,52 @@
+<nav class="navbar d-flex flex-row-reverse">
+    <button class="navbar-item btn btn-primary text-light d-end" type="button" data-bs-toggle="modal"
+        data-bs-target="#exampleModal">Create Inventory</button>
+    <!-- <a routerLink="/display" routerLinkActive="active" class="navbar-item">View</a> -->
+</nav>
+<router-outlet> </router-outlet>
+<!-- <app-display-inventory></app-display-inventory> -->
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <form (ngSubmit)="submitForm()">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Add your products here. </h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="form-group">
+                        <label for="txtame">Name </label>
+                        <input type="text" class="form-control" id="txtame" name="name" aria-describedby="textHelp"
+                            [(ngModel)]="product.name" placeholder="Enter Name" required>
+                        <small id="textHelp" class="form-text text-muted">We always appreciate full names .</small>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="txtQuantity">Quantity </label>
+                        <input type="number" class="form-control" id="txtQuantity" name="quantity" [(ngModel)]="product.quantity"
+                            placeholder="Enter Quantity">
+
+                    </div>
+
+                    <div class="form-group">
+                        <label for="txtPrice">Price </label>
+                        <input type="number" class="form-control" id="txtPrice" name="price" aria-describedby="priceHelp"
+                            [(ngModel)]="product.price" placeholder="Enter Price">
+                        <small id="priceHelp" class="form-text text-muted">Less price are always prefered by
+                            customers.</small>
+                    </div>
+
+
+
+                    <!-- <button type="submit">Submit</button> -->
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" id="btnClose" data-bs-dismiss="modal">Close</button>
+                    <button type="submit" class="btn btn-primary">Add</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
